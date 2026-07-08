@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Uma mensagem para meu amor</title>
+
+<style>
+
+@font-face{
+    font-family:'StarJedi';
+    src:url('./Starjedi.ttf') format('truetype');
+}
+
+body{
+    margin:0;
+    overflow:hidden;
+    background:black;
+    color:white;
+    font-family:Arial,sans-serif;
+}
+
+/* Fondo de estrellas */
+.stars{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:
+    radial-gradient(white 1px, transparent 1px);
+    background-size:50px 50px;
+    animation:moveStars 120s linear infinite;
+}
+
+@keyframes moveStars{
+    from{
+        background-position:0 0;
+    }
+    to{
+        background-position:-2000px 2000px;
+    }
+}
+
+.intro{
+    position:absolute;
+    width:80%;
+    left:10%;
+    bottom:-100%;
+    color:#ffe81f;
+    font-size:30px;
+    text-align:justify;
+    transform:perspective(400px) rotateX(25deg);
+    animation:scroll 35s linear forwards;
+}
+
+@keyframes scroll{
+    from{
+        bottom:-100%;
+    }
+    to{
+        bottom:130%;
+    }
+}
+
+.content{
+    display:none;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:80%;
+    max-width:800px;
+    background:rgba(0,0,0,0.85);
+    padding:40px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 0 30px #ffe81f;
+}
+
+h1,h2{
+    color:#ffe81f;
+    font-family:'StarJedi',sans-serif;
+}
+
+p{
+    font-size:22px;
+    line-height:1.6;
+}
+
+button{
+    padding:15px 30px;
+    font-size:20px;
+    border:none;
+    border-radius:15px;
+    cursor:pointer;
+    margin:10px;
+}
+
+#yes{
+    background:#2ecc71;
+    color:white;
+}
+
+#no{
+    background:#e74c3c;
+    color:white;
+    position:relative;
+}
+
+.result{
+    display:none;
+    margin-top:30px;
+    font-size:30px;
+    color:#ffe81f;
+}
+
+.lightsaber{
+    font-size:50px;
+    margin:20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="stars"></div>
+
+<div class="intro">
+
+<p>Em uma galáxia não tão distante...</p>
+
+<p>
+Às vezes a Força conecta pessoas de países diferentes,
+de culturas diferentes e de lugares muito distantes.
+</p>
+
+<p>
+Entre milhões de estrelas,
+eu encontrei alguém especial.
+</p>
+
+<p>
+Assim como Padmé e Anakin encontraram um ao outro
+em meio ao destino e às aventuras,
+eu encontrei você, meu amor.
+</p>
+
+<p>
+E agora existe apenas uma pergunta
+que pode mudar o rumo desta galáxia...
+</p>
+
+</div>
+
+<div class="content" id="content">
+
+<div class="lightsaber">
+(♡ˊ͈ ꒳ ˋ͈)
+</div>
+
+<h1>Tiago ❤️</h1>
+
+<p>
+Talvez a Força tenha cruzado nossos caminhos por um motivo.
+</p>
+
+<p>
+Cada conversa, cada risada e cada momento compartilhado
+fizeram você se tornar alguém muito especial para mim.
+</p>
+
+<p>
+Você se tornou uma das minhas pessoas favoritas
+nesta galáxia inteira.
+</p>
+
+<p>
+Então hoje eu quero te perguntar algo importante (,; ⩌ ;,)
+</p>
+
+<h2>
+Você gostaria de ser meu namorado?
+</h2>
+
+<button id="yes" onclick="acceptLove()">
+SIM ❤️
+</button>
+
+<button id="no" onmouseover="runAway()">
+NÃO
+</button>
+
+<div class="result" id="result">
+A Força uniu nossos destinos ૮₍ ´ ꒳ ` ₎ა
+<br><br>
+❤️
+<br><br>
+Agora nossa aventura começa...
+</div>
+
+</div>
+
+<audio id="music" loop>
+    <source src="musica.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+setTimeout(()=>{
+    document.querySelector(".intro").style.display="none";
+    document.getElementById("content").style.display="block";
+},35000);
+
+function acceptLove(){
+    document.getElementById("result").style.display="block";
+}
+
+function runAway(){
+    let btn=document.getElementById("no");
+
+    let x=Math.random()*500-250;
+    let y=Math.random()*300-150;
+
+    btn.style.transform=`translate(${x}px, ${y}px)`;
+}
+
+/* Iniciar música tras el primer clic */
+document.addEventListener("click",function(){
+    document.getElementById("music").play();
+},{once:true});
+
+</script>
+
+</body>
+</html>
