@@ -24,20 +24,49 @@ body{
 /* Fondo de estrellas */
 .stars{
     position:fixed;
+    top:0;
+    left:0;
     width:100%;
     height:100%;
-    background:
-    radial-gradient(white 1px, transparent 1px);
-    background-size:50px 50px;
-    animation:moveStars 120s linear infinite;
+    background:#000;
+    overflow:hidden;
+    z-index:-2;
 }
 
-@keyframes moveStars{
+.stars::before,
+.stars::after{
+    content:'';
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:white;
+    border-radius:50%;
+    box-shadow:
+    50px 100px white,
+    200px 300px white,
+    400px 150px white,
+    600px 500px white,
+    800px 100px white,
+    1000px 350px white,
+    1200px 200px white,
+    1400px 450px white,
+    1600px 150px white,
+    1800px 600px white,
+    300px 700px white,
+    900px 800px white,
+    1500px 750px white,
+    1700px 300px white,
+    500px 900px white,
+    1300px 900px white;
+    animation:twinkle 3s infinite alternate;
+}
+
+@keyframes twinkle{
     from{
-        background-position:0 0;
+        opacity:0.3;
     }
     to{
-        background-position:-2000px 2000px;
+        opacity:1;
     }
 }
 
