@@ -144,6 +144,7 @@ body{
 /* INTRO */
 
 .intro{
+    display:none;
     position:absolute;
     width:70%;
     left:15%;
@@ -153,7 +154,6 @@ body{
     text-align:center;
     font-family:'StarJedi';
     transform:perspective(400px) rotateX(25deg);
-    animation:scroll 35s linear forwards;
 }
 
 @keyframes scroll{
@@ -228,15 +228,16 @@ button{
 </head>
 
 <body>
-    <div id="startScreen">
+
+<div id="startScreen">
     <h1 class="start-title">STAR WARS</h1>
 
-<p class="start-text">
-    Para ti, meu querido amor ❤️
-</p>
+    <p class="start-text">
+        Para ti, meu querido amor ❤️
+    </p>
 
     <button id="startButton" onclick="startExperience()">
-        Entre em nossa galáxia 
+        Entre em nossa galáxia
     </button>
 </div>
 
@@ -340,8 +341,12 @@ function startExperience(){
 
     document.getElementById("startScreen").style.display="none";
 
+    const intro = document.querySelector(".intro");
+    intro.style.display = "block";
+    intro.style.animation = "scroll 35s linear forwards";
+
     setTimeout(()=>{
-        document.querySelector(".intro").style.display="none";
+        intro.style.display="none";
         document.getElementById("content").style.display="block";
     },35000);
 }
