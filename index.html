@@ -199,12 +199,32 @@ button{
         opacity:0;
     }
 }
+    .moon{
+    position:fixed;
+    top:60px;
+    right:80px;
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    background:
+        radial-gradient(circle at 30% 30%,
+        #fffef8,
+        #f6f1cf 45%,
+        #cfd7ff 80%,
+        #94a8ff 100%);
+    box-shadow:
+        0 0 50px rgba(255,255,255,0.8),
+        0 0 100px rgba(150,180,255,0.5),
+        0 0 180px rgba(120,150,255,0.3);
+    z-index:-1;
+}
 </style>
 </head>
 
 <body>
 
 <div class="stars"></div>
+<div class="moon"></div>
     <div class="shooting-star"></div>
 <div class="shooting-star second"></div>
 <div class="shooting-star third"></div>
