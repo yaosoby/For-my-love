@@ -231,9 +231,9 @@ button{
     <div id="startScreen">
     <h1 class="start-title">STAR WARS</h1>
 
-    <p class="start-text">
-        Uma mensagem especial para Tiago
-    </p>
+<p class="start-text">
+    Para ti, meu querido amor ❤️
+</p>
 
     <button id="startButton" onclick="startExperience()">
         Entre em nossa galáxia 
@@ -333,17 +333,18 @@ Quero recomeçar com você.
 </audio>
 
 <script>
-    function startExperience(){
+
+function startExperience(){
 
     document.getElementById("music").play();
 
     document.getElementById("startScreen").style.display="none";
-}
 
-setTimeout(()=>{
-    document.querySelector(".intro").style.display="none";
-    document.getElementById("content").style.display="block";
-},35000);
+    setTimeout(()=>{
+        document.querySelector(".intro").style.display="none";
+        document.getElementById("content").style.display="block";
+    },35000);
+}
 
 function acceptLove(){
     document.getElementById("result").style.display="block";
@@ -358,14 +359,6 @@ function runAway(){
     btn.style.transform=`translate(${x}px, ${y}px)`;
 }
 
-document.addEventListener("click",function(){
-    document.getElementById("music").play();
-},{once:true});
-
-</script>
-
-</body>
-</html>
 </script>
 
 </body>
