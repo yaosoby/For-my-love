@@ -6,6 +6,46 @@
 <title>meu amor</title>
 
 <style>
+    #startScreen{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:black;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+.start-title{
+    font-family:'StarJedi';
+    color:#ffe81f;
+    font-size:90px;
+    margin-bottom:20px;
+}
+
+.start-text{
+    color:white;
+    font-size:24px;
+    margin-bottom:40px;
+}
+
+#startButton{
+    padding:20px 40px;
+    font-size:24px;
+    border:none;
+    border-radius:20px;
+    background:#ffe81f;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+#startButton:hover{
+    transform:scale(1.1);
+}
 
 @font-face{
     font-family:'StarJedi';
@@ -188,6 +228,17 @@ button{
 </head>
 
 <body>
+    <div id="startScreen">
+    <h1 class="start-title">STAR WARS</h1>
+
+    <p class="start-text">
+        Uma mensagem especial para Tiago
+    </p>
+
+    <button id="startButton" onclick="startExperience()">
+        Entre em nossa galáxia 
+    </button>
+</div>
 
 <div class="stars"></div>
 <div class="moon"></div>
@@ -277,11 +328,17 @@ Quero recomeçar com você.
 
 </div>
 
-<audio id="music" loop>
+<audio id="music" loop preload="auto">
     <source src="musica.mp3" type="audio/mpeg">
 </audio>
 
 <script>
+    function startExperience(){
+
+    document.getElementById("music").play();
+
+    document.getElementById("startScreen").style.display="none";
+}
 
 setTimeout(()=>{
     document.querySelector(".intro").style.display="none";
