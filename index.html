@@ -39,13 +39,29 @@ body{
     height:100%;
     background-image:
         radial-gradient(2px 2px at 20px 30px, white, transparent),
-        radial-gradient(3px 3px at 200px 100px, white, transparent),
-        radial-gradient(2px 2px at 400px 300px, white, transparent),
-        radial-gradient(4px 4px at 600px 200px, white, transparent),
-        radial-gradient(2px 2px at 900px 500px, white, transparent),
-        radial-gradient(3px 3px at 1200px 250px, white, transparent),
-        radial-gradient(2px 2px at 1500px 700px, white, transparent),
-        radial-gradient(4px 4px at 1700px 400px, white, transparent);
+        radial-gradient(3px 3px at 90px 180px, white, transparent),
+        radial-gradient(1px 1px at 140px 400px, white, transparent),
+        radial-gradient(2px 2px at 220px 90px, white, transparent),
+        radial-gradient(4px 4px at 320px 250px, white, transparent),
+        radial-gradient(2px 2px at 420px 500px, white, transparent),
+        radial-gradient(1px 1px at 530px 120px, white, transparent),
+        radial-gradient(3px 3px at 650px 310px, white, transparent),
+        radial-gradient(2px 2px at 780px 180px, white, transparent),
+        radial-gradient(4px 4px at 890px 600px, white, transparent),
+        radial-gradient(2px 2px at 1020px 80px, white, transparent),
+        radial-gradient(3px 3px at 1130px 240px, white, transparent),
+        radial-gradient(1px 1px at 1240px 450px, white, transparent),
+        radial-gradient(2px 2px at 1360px 700px, white, transparent),
+        radial-gradient(3px 3px at 1480px 300px, white, transparent),
+        radial-gradient(2px 2px at 1600px 100px, white, transparent),
+        radial-gradient(4px 4px at 1720px 500px, white, transparent),
+        radial-gradient(2px 2px at 1800px 250px, white, transparent),
+        radial-gradient(1px 1px at 250px 700px, white, transparent),
+        radial-gradient(2px 2px at 500px 850px, white, transparent),
+        radial-gradient(3px 3px at 850px 820px, white, transparent),
+        radial-gradient(1px 1px at 1200px 900px, white, transparent),
+        radial-gradient(2px 2px at 1550px 850px, white, transparent),
+        radial-gradient(3px 3px at 1750px 750px, white, transparent);
     animation:twinkle 4s infinite alternate;
 }
 
@@ -78,53 +94,6 @@ body{
     0 0 100px rgba(150,180,255,0.5),
     0 0 180px rgba(120,150,255,0.3);
     z-index:-2;
-}
-
-/* ESTRELLAS FUGACES */
-
-.shooting-star{
-    position:fixed;
-    width:3px;
-    height:3px;
-    background:white;
-    border-radius:50%;
-    box-shadow:0 0 20px white;
-    animation:shoot 7s linear infinite;
-}
-
-.shooting-star::after{
-    content:'';
-    position:absolute;
-    width:150px;
-    height:2px;
-    background:linear-gradient(to right, white, transparent);
-    transform:translate(-150px,1px);
-}
-
-.second{
-    animation-delay:2s;
-}
-
-.third{
-    animation-delay:4s;
-}
-
-@keyframes shoot{
-    0%{
-        top:-100px;
-        left:-100px;
-        opacity:0;
-    }
-
-    10%{
-        opacity:1;
-    }
-
-    100%{
-        top:1000px;
-        left:1800px;
-        opacity:0;
-    }
 }
 
 /* INTRO */
